@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export PATH=/usr/local/n/versions/node/17.5.0/bin/:$PATH
+npm explore -g ccli -- "pwd"
