@@ -4,7 +4,7 @@ import { readFile } from "fs/promises"
 export async function getConfig() {
     
     const dir=process.env.CCLI_CONFIG_DIR||homedir()
-    const file = process.env.CCLI_CONFIG_FILE||`${dir}/.templ/config.js`
+    const file = process.env.CCLI_CONFIG_FILE||`${dir}/.templ/ccli.env`
     let env=process.env
     try {
         env= Object.assign(env,dotenv.parse( await readFile(file)))
