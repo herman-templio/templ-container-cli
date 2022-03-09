@@ -2,4 +2,4 @@
 
 VERSION=/usr/local/n/versions/node/17.5.0
 export PATH=$VERSION/bin/:$PATH
-node $VERSION/lib/node_modules/templ-ccli/src/ccli.js
+node $VERSION/lib/node_modules/templ-ccli/src/ccli.js "$@"
