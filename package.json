@@ -19,7 +19,7 @@
     "cli": "node -- ./src/commands/index.js ",
     "nodemon": "nodemon --exec node"
   },
-  "bin": "bin/ccli",
+  "bin": "src/ccli.js",
   "engines": {
     "node": ">=16.0",
     "npm": ">=8"
