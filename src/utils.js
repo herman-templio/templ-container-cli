@@ -30,9 +30,14 @@ export class Program extends Command {
             return error(...args)
         }
     }
-    async wrap(fn) {
+    async wrap(fn,handler) {
         try {
-            this.info(await fn())
+            if(handler) return handler(await fn())
+            
+            const {status,msg,debug}=await fn()
+            this.info(status)
+            if(msg) this.info(msg)
+            if(debug) this.debug(debug)
         } catch(e) {
             error('Failed with error',e.message)
             process.exit(1)
