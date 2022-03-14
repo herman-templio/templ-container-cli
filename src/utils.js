@@ -1,7 +1,8 @@
 export const echo = console.log
 export const error = console.error
 import {Command} from "commander"
-
+import completion from "commander-completion"
+completion({Command:Command})
 export class Program extends Command {
     constructor() {
         super()
@@ -9,6 +10,18 @@ export class Program extends Command {
         this.option('-v,--verbose','Verbose output')
             .option('-s,--silent','No/minimal output')
             .option('-d,--debug','Debug output')
+            //.enablePositionalOptions()
+            .action(function (){
+                if(!process.env.COMP_LINE) {
+                    this.help()
+                    return
+                }
+                this.complete({
+                    line: process.env.COMP_LINE,cursor: parseInt(process.env.COMP_POINT||0)
+                },(err,res)=>{
+                    console.log(...res);
+                })
+            })
     }
     verbose(...args) {
         if(this.getOptionValue('verbose')) {
@@ -32,8 +45,8 @@ export class Program extends Command {
     }
     async wrap(fn,handler) {
         try {
-            if(handler) return handler(await fn())
-            
+            if(handler) return handler(await fn(),this)
+
             const {status,msg,debug}=await fn()
             this.info(status)
             if(msg) this.info(msg)

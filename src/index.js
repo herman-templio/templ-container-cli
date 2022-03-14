@@ -7,8 +7,8 @@ program.command('version').action(async()=>{
 })
 
 /** Top level command which runs sub-commands located in separate files. */
-program
-    .command('php','php related commands',  { executableFile: 'php.js' })
+import phpSub from './php.js'
+phpSub(program.command('php').description('php related commands'),{program})
 
-program
-    .command('cache','cache related commands',  { executableFile: 'cache.js' })
+import cacheSub from './cache.js'
+cacheSub(program.command('cache').description('cache related commands'),{program})
