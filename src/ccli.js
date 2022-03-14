@@ -9,7 +9,7 @@ setRunner((...args) => {
     }
 })
 
-program.name('ccli')
+program.name('templ')
     .description('Templ Container CLI')
 
 program.parseAsync(process.argv)
