@@ -1,56 +1,46 @@
-# templ-container-cli
-CLI for containers
-
-## `./src/ccli.js -h`
-
-```
-Usage: ccli [options] [command]
-
+# templ 
 Templ Container CLI
 
 Options:
-  -v,--verbose    Verbose output
-  -s,--silent     No/minimal output
-  -d,--debug      Debug output
-  -h, --help      display help for command
++ **-v,--verbose** Verbose output
++ **-s,--silent** No/minimal output
++ **-d,--debug** Debug output
 
-Commands:
-  version
-  php             php related commands
-  cache           cache related commands
-  help [command]  display help for command
-```
+Subcommands:
++ **version** - 
++ **php** - php related commands
++ **cache** - cache related commands
 
-###  `./src/ccli.js php -h`
+## version 
 
-```
-Usage: php [options] [command]
 
-Options:
-  -v,--verbose    Verbose output
-  -s,--silent     No/minimal output
-  -d,--debug      Debug output
-  -h, --help      display help for command
+## php 
+php related commands
 
-Commands:
-  restart         Restarts php.
-  help [command]  display help for command
- ```
- 
- ### `./src/ccli.js cache -h`
-```
-Usage: cache [options] [command]
+Subcommands:
++ **restart** - Restarts php.
 
-Options:
-  -v,--verbose    Verbose output
-  -s,--silent     No/minimal output
-  -d,--debug      Debug output
-  -h, --help      display help for command
+### restart 
+Restarts php.
 
-Commands:
-  purge [app]     Purges (deletes content of) server cache.
-  status [app]    Status of server cache.
-  enable [app]    Enablesserver cache.
-  disable [app]   Disables server cache.
-  help [command]  display help for command
-```
+
+## cache 
+cache related commands
+
+Subcommands:
++ **purge** - Purges (deletes content of) server cache.
++ **status** - Status of server cache.
++ **enable** - Enablesserver cache.
++ **disable** - Disables server cache.
+
+### purge [app]
+Purges (deletes content of) server cache.
+
+### status [app]
+Status of server cache.
+
+### enable [app]
+Enablesserver cache.
+
+### disable [app]
+Disables server cache.
