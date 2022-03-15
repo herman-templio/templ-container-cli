@@ -43,7 +43,6 @@
     "axios": "^0.26.0",
     "commander": "9.0.0",
     "commander-completion": "^1.0.1",
-    "dotenv": "^16.0.0",
-    "node-fetch": "^3.2.2"
+    "dotenv": "^16.0.0"
   }
 }

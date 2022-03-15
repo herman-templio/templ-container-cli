@@ -1,4 +1,3 @@
-//import fetch from 'node-fetch';
 import axios from 'axios'
 import { getConfig } from './config.js'
 const default_config ={
@@ -15,7 +14,6 @@ export async function apiRunner({command,args},config) {
     }
 
     const options={headers:{authentication:config.token}}
-    //return  await fetch(`${config.apiURL}/${path}`,{method:'POST',body:data}).then(res=>res.json)
     const res = await axios.post(`${config.api}/${path}`,data,options)
     return res.data
 }

@@ -7,12 +7,12 @@ Options:
 + **-d,--debug** Debug output
 
 Subcommands:
-+ **version** - 
++ **version** - Prints version.
 + **php** - php related commands
 + **cache** - cache related commands
 
 ## version 
-
+Prints version.
 
 ## php 
 php related commands
@@ -44,3 +44,6 @@ Enablesserver cache.
 
 ### disable [app]
 Disables server cache.
+
+
+
