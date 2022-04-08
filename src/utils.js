@@ -51,6 +51,8 @@ export class Program extends Command {
             this.info(status)
             if(msg) this.info(msg)
             if(debug) this.debug(debug)
+            if(status.match(/ok/i)) return
+            process.exit(1)
         } catch(e) {
             error('Failed with error',e.message)
             process.exit(1)
