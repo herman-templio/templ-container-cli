@@ -12,3 +12,6 @@ phpSub(program.command('php').description('php related commands'),{program})
 
 import cacheSub from './cache.js'
 cacheSub(program.command('cache').description('cache related commands'),{program})
+
+import incidentSub from './incident.js'
+incidentSub(program.command('incident').description('incident related commands'),{program})

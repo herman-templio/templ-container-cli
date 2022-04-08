@@ -16,7 +16,7 @@
     "test": "mocha",
     "watch": "nodemon --exec ./node_modules/.bin/mocha",
     "cliw": "nodemon --exec node ./src/ccli.js --",
-    "cli": "node -- ./src/commands/index.js ",
+    "cli": "node -- ./src/ccli.js ",
     "nodemon": "nodemon --exec node"
   },
   "bin": "src/ccli.js",
