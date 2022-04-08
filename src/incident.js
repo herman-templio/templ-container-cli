@@ -27,11 +27,9 @@ incident
     .description(`Closes incidents`)
     .option('--type <type>','incident type')
     .action(async function(app,options){
-        root.info('Closing incident')
-        root.wrap(async ()=>{ 
-            return program.wrap(commandRunner({command:['incident'],args:{
-                cmd:'close',app,type:options.type
-            }}))
-        })
+        program.info('Closing incident')
+        return program.wrap(commandRunner({command:['incident'],args:{
+            cmd:'close',app,type:options.type
+        }}))
     })
 }

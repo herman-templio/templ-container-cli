@@ -54,6 +54,20 @@ describe('Running program',()=>{
         expect(run_data.args.app).to.equal('1')
     })
 
+    it('close incident',async()=>{
+        const args=[
+            'incident',
+            'close',
+            '1',
+            '--type','e-type',
+        ]
+        await program.parseAsync(base_args.concat(args))
+        console.log(run_data);
+        expect(run_data.command[0]).to.equal('incident')
+        expect(run_data.args.cmd).to.equal('close')
+        expect(run_data.args.app).to.equal('1')
+    })
+
     it('restart php',async()=>{
         const args=[
             'php',
