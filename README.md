@@ -10,6 +10,7 @@ Subcommands:
 + **version** - Prints version.
 + **php** - php related commands
 + **cache** - cache related commands
++ **incident** - Incident commands
 
 ## version 
 Prints version.
@@ -44,6 +45,27 @@ Enablesserver cache.
 
 ### disable [app]
 Disables server cache.
+
+
+## incident 
+Incident commands
+
+Subcommands:
++ **open** - Opens an incident with the given error message
++ **close** - Closes incidents
+
+### open <message> [app]
+Opens an incident with the given error message
+
+Options:
++ **--type <type>** incident type
++ **--data <json>** Addtitional incident data as json
+
+### close [app]
+Closes incidents
+
+Options:
++ **--type <type>** incident type
 
 
 
