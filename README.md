@@ -51,15 +51,16 @@ Disables server cache.
 Incident commands
 
 Subcommands:
-+ **open** - Opens an incident with the given error message
++ **open** - Opens an incident with the given error message.
 + **close** - Closes incidents
 
 ### open <message> [app]
-Opens an incident with the given error message
+Opens an incident with the given error message.
 
 Options:
 + **--type <type>** incident type
-+ **--data <json>** Addtitional incident data as json
++ **--notify-email <addresses>** List of emails to notify
++ **--notify-sms <addresses>** List of numbers to notify via sms
 
 ### close [app]
 Closes incidents

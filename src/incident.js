@@ -5,20 +5,22 @@ incident.description('Incident commands')
 
 incident
     .command('open <message> [app]')
-    .description(`Opens an incident with the given error message`)
+    .description(`Opens an incident with the given error message.`)
     .option('--type <type>','incident type')
-    .option('--data <json>','Addtitional incident data as json')
+    .option('--notify-email <addresses>','List of emails to notify')
+    .option('--notify-sms <addresses>','List of numbers to notify via sms')
     .action(async function(message,app,options){
-        let data
+        let notify={}
         try {
-            data=options.data && JSON.parse(options.data)||{}
+            notify.email=options.notifyEmail && options.notifyEmail.split(',')
+            notify.sms=options.notifySms && options.notifySms.split(',')
         } catch(e) {
-            console.log('Failure to parse JSON',options.data);
+            console.log('Failure to parse options',e)
             process.exit(1)
         }
         return program.wrap(commandRunner({command:['incident'],args:{
             cmd:'open',app,message,
-            type:options.type,data
+            type:options.type,data:{notify}
         }}))
     })
 
