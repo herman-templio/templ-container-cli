@@ -60,7 +60,7 @@ Opens an incident with the given error message.
 Options:
 + **--type <type>** incident type
 + **--notify-email <addresses>** List of emails to notify
-+ **--notify-sms <addresses>** List of numbers to notify via sms
++ **--notify-sms <addresses>** List of numbers (inclusive Country Code) to notify via sms
 
 ### close [app]
 Closes incidents
