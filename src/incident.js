@@ -7,8 +7,8 @@ incident
     .command('open <message> [app]')
     .description(`Opens an incident with the given error message.`)
     .option('--type <type>','incident type')
-    .option('--notify-email <addresses>','List of emails to notify')
-    .option('--notify-sms <numbers>','List of numbers (inclusive Country Code) to notify via sms')
+    .option('--notify-email <addresses>','Comma-separated list of emails to notify')
+    .option('--notify-sms <numbers>','Comma-separated list of numbers (inclusive Country Code) to notify via sms')
     .action(async function(message,app,options){
         let notify={}
         try {
