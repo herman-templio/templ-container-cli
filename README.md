@@ -54,19 +54,19 @@ Subcommands:
 + **open** - Opens an incident with the given error message.
 + **close** - Closes incidents
 
-### open <message> [app]
+### open \<message\> [app]
 Opens an incident with the given error message.
 
 Options:
-+ **--type <type>** incident type
-+ **--notify-email <addresses>** Comma-separated list of emails to notify
-+ **--notify-sms <numbers>** Comma-separated list of numbers (inclusive Country Code) to notify via sms
++ **--type \<type\>** incident type
++ **--notify-email \<addresses\>** Comma-separated list of emails to notify
++ **--notify-sms \<numbers\>** Comma-separated list of numbers (inclusive Country Code) to notify via sms
 
 ### close [app]
 Closes incidents
 
 Options:
-+ **--type <type>** incident type
++ **--type \<type\>** incident type
 
 
 

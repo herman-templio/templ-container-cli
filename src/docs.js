@@ -14,7 +14,7 @@ function generateDocs(command,level) {
 
     if(command.options.length) {
         console.log('Options:')
-        command.options.forEach(a=>console.log(`+ **${a.flags}**`,a.description));
+        command.options.forEach(a=>console.log(`+ **${a.flags.replace(/([><])/g,'\\$1')}**`,a.description));
         console.log();
     }
     //console.log( command.description() )
@@ -31,7 +31,7 @@ const commands= generateDocs(program,1)
 function argString(a) {
     let arg = a.name()
     if(a.variadic) arg=`${arg}...`
-    if(a.required) arg=`<${arg}>`
+    if(a.required) arg=`\\<${arg}\\>`
     else arg=`[${arg}]`
     return arg
 }
