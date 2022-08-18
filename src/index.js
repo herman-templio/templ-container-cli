@@ -15,3 +15,7 @@ cacheSub(program.command('cache').description('cache related commands'),{program
 
 import incidentSub from './incident.js'
 incidentSub(program.command('incident').description('incident related commands'),{program})
+
+/** Top level command which runs sub-commands located in separate files. */
+import serviceSub from './service.js'
+serviceSub(program.command('service').description('service related commands'),{program})

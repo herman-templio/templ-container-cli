@@ -1,6 +1,6 @@
 {
   "name": "templ-ccli",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Container CLI Client",
   "main": "src/index.js",
   "type": "module",
@@ -17,7 +17,8 @@
     "watch": "nodemon --exec ./node_modules/.bin/mocha",
     "cliw": "nodemon --exec node ./src/ccli.js --",
     "cli": "node -- ./src/ccli.js ",
-    "nodemon": "nodemon --exec node"
+    "nodemon": "nodemon --exec node",
+    "deploy": "templ-deploy"
   },
   "bin": "src/ccli.js",
   "engines": {
@@ -37,7 +38,8 @@
     "eslint": "^8.3.0",
     "mocha": "^9.1.3",
     "nodemon": "^2.0.15",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "templ-deploy": "file:../deploy"
   },
   "dependencies": {
     "axios": "^0.26.0",

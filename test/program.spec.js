@@ -45,13 +45,17 @@ describe('Running program',()=>{
             'some error',
             '1',
             '--type','e-type',
-            '--data','{"sms":"12345","email":["mail1","mail2"]}',
+            '--notify-email','mail1,mail2',
+            '--notify-sms','number1,number2'
         ]
         await program.parseAsync(base_args.concat(args))
         console.log(run_data);
         expect(run_data.command[0]).to.equal('incident')
         expect(run_data.args.cmd).to.equal('open')
         expect(run_data.args.app).to.equal('1')
+        console.log(run_data.args.data.notify);
+        expect(run_data.args.data.notify.email[0]).to.equal('mail1')
+        expect(run_data.args.data.notify.sms[1]).to.equal('number2')
     })
 
     it('close incident',async()=>{
@@ -76,6 +80,18 @@ describe('Running program',()=>{
         await program.parseAsync(base_args.concat(args))
         expect(run_data.command[0]).to.equal('restart')
         expect(run_data.args[0]).to.equal('php')
+    })
+
+
+    it('restart service',async()=>{
+        const args=[
+            'service',
+            'restart',
+            'node'
+        ]
+        await program.parseAsync(base_args.concat(args))
+        expect(run_data.command[0]).to.equal('restart')
+        expect(run_data.args[0]).to.equal('node')
     })
 
 })
