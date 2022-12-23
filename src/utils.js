@@ -49,7 +49,7 @@ export class Program extends Command {
 
             const {status,msg,debug}=await fn()
             this.info(status)
-            if(msg) this.info(msg)
+            if(msg) this.info(msg.trim())
             if(debug) this.debug(debug)
             if(status.match(/ok/i)) return
             process.exit(1)
