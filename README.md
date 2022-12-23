@@ -11,6 +11,7 @@ Subcommands:
 + **php** - php related commands
 + **cache** - cache related commands
 + **incident** - Incident commands
++ **service** - service related commands
 
 ## version 
 Prints version.
@@ -67,6 +68,32 @@ Closes incidents
 
 Options:
 + **--type \<type\>** incident type
+
+
+## service 
+service related commands
+
+Subcommands:
++ **list** - List existing services.
++ **status** - Status of the given service.
++ **start** - Start the given service.
++ **stop** - Stop the given service.
++ **restart** - Restarts the given service.
+
+### list 
+List existing services.
+
+### status \<service\>
+Status of the given service.
+
+### start \<service\>
+Start the given service.
+
+### stop \<service\>
+Stop the given service.
+
+### restart \<service\>
+Restarts the given service.
 
 
 
