@@ -1,6 +1,6 @@
 {
   "name": "templ-ccli",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Container CLI Client",
   "main": "src/index.js",
   "type": "module",

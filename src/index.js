@@ -1,6 +1,8 @@
 import {Program} from './utils.js'
 export const program = new Program()
-
+/**@typedef {Object} SubcommandOptions
+ * @property {Program} program
+ */
 program.command('version').description('Prints version.').action(async()=>{
     const p = await import('../package.json',{assert: {type: "json"}})
     console.log(p.default.version);
