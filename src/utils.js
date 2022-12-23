@@ -48,7 +48,7 @@ export class Program extends Command {
             if(handler) return handler(await fn(),this)
 
             const {status,msg,debug}=await fn()
-            this.info(status)
+            this.info(`Status: ${status}`)
             if(msg) this.info(msg.trim())
             if(debug) this.debug(debug)
             if(status.match(/ok/i)) return
